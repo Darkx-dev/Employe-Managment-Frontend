@@ -5,27 +5,18 @@ const activeBadge = document.querySelector("#active-tab > span");
 const onLeaveBadge = document.querySelector("#onleave-tab > span");
 const inactiveBadge = document.querySelector("#inactive-tab > span");
 
+const sidebarName = document.querySelector(
+  "aside > div.dropdown > button > div > div.fw-bold"
+);
+const sidebarImage = document.querySelector(
+  "aside > div.d-flex.justify-content-center > img"
+);
+const sidebarEmail = document.querySelector(
+  "aside > div.dropdown > button > div > div.small.text-muted"
+);
+
 // Fetch Employees from API
-const fetchEmployees = async () => {
-  try {
-    const response = await fetch("http://localhost:3000/users", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch employees");
-    }
-
-    const employees = await response.json();
-    renderEmployees(employees);
-    updateBadges(employees);
-  } catch (err) {
-    console.error("Error fetching employees:", err);
-  }
-};
+const fetchEmployees = async () => {};
 
 // Render Employees in Table
 const renderEmployees = (employees) => {
@@ -68,7 +59,9 @@ const generateEmployeeRow = (employee) => {
     </td>
     <td>${employee.department || "N/A"}</td>
     <td>${positionFormatted}</td>
-    <td><span class="badge ${badgeClass}">${employee.status.split('_').join(' ')}</span></td>
+    <td><span class="badge ${badgeClass}">${employee.status
+    .split("_")
+    .join(" ")}</span></td>
     <td>${employee.joined_date}</td>
     <td>
       <div class="dropdown action-dropdown">
@@ -137,5 +130,7 @@ const viewDetails = (emp_id) => {
   // Logic to view details (e.g., open modal with detailed info)
 };
 
-// Initial Fetch
-fetchEmployees();
+// Event Listeners
+document.addEventListener("DOMContentLoaded", () => {
+  fetchEmployees();
+});

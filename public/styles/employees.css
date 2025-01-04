@@ -14,7 +14,7 @@
 }
 
 /* Employees Section Container */
-.employees-section {    
+.employees-section {
     background: #fff;
     border-radius: 0.5rem;
 }
@@ -35,21 +35,24 @@
     transition: var(--transition);
 }
 
-.employees-section .nav-tabs .nav-link:hover {
+.employees-section .nav-tabs .nav-link:hover,
+.employees-section .nav-tabs .nav-link.active {
     color: var(--primary-color);
 }
 
 .employees-section .nav-tabs .nav-link.active {
-    color: var(--primary-color);
-    background: transparent;
     border-bottom: 2px solid var(--primary-color);
 }
 
-.employees-section .nav-tabs .badge {
+.employees-section .nav-tabs .badge,
+.employees-section .badge {
     font-weight: 500;
+    transition: var(--transition);
+}
+
+.employees-section .nav-tabs .badge {
     font-size: 0.75rem;
     padding: 0.35em 0.65em;
-    transition: var(--transition);
 }
 
 /* Filters Row */
@@ -113,12 +116,6 @@
 }
 
 /* Status Badges */
-.employees-section .badge {
-    font-weight: 500;
-    padding: 0.5em 0.8em;
-    border-radius: 0.25rem;
-}
-
 .badge.bg-success {
     background-color: var(--badge-active-bg) !important;
     color: var(--badge-active-color);
@@ -244,4 +241,3 @@
         padding: 0.75rem 0.5rem;
     }
 }
-

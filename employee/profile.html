@@ -7,7 +7,6 @@
     <title>Employee Dashboard</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../public/styles/custom-bootstrap.css">
     <link rel="stylesheet" href="../public/styles/global.css" />
     <link rel="stylesheet" href="../public/styles/sidebar.css" />
     <link rel="stylesheet" href="../public/styles/avatar.css" />
@@ -19,7 +18,6 @@
 
         main {
             width: 100%;
-            padding: 1em;
         }
 
         .profile-img {
@@ -106,225 +104,190 @@
             <span href="">Manage Leaves</span>
         </a>
     </aside>
-    <main class="p-4">
+    <main class="p-lg-4 p-0">
         <!-- Profile Header -->
         <div class="profile-header">
             <div class="row align-items-center">
                 <div class="col-auto">
-                    <img src="https://imgs.search.brave.com/PUs-9qXlTnNWXF5aegQQvjlXb_7ilrK7GtUPFT8PoBc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzI3/YTVlYmViLWI5NDEt/NDBmZi04MWNhLTRi/YzgzOWQ3NWQyNy9k/ZzJwanUyLWM2YmQz/ZWNmLTExNmMtNDA0/Ny05NDNiLTg5Y2I2/ZTE4ZDk4NS5qcGc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekkzWVRWbFltVmlM/V0k1TkRFdE5EQm1a/aTA0TVdOaExUUmlZ/emd6T1dRM05XUXlO/MXd2WkdjeWNHcDFN/aTFqTm1Ka00yVmpa/aTB4TVRaakxUUXdO/RGN0T1RRellpMDRP/V05pTm1VeE9HUTVP/RFV1YW5CbkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuWXUzZy1yb2pV/MXBSWGRlVDJ3WHhr/R2dQem00OVVZcWM2/ejRTSEpfdGgxdw"
-                        width="70" alt="Profile" class="rounded-circle ">
+                    <img src="https://imgs.search.brave.com/0SspXugi6MjgAM4vlC1ikUvD7DYs6BcamU8ZVjKZ8O4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ4/NzQ2NTY2NC9waG90/by9wb3J0cmFpdC1l/bXBsb3llZS1hbmQt/YXNpYW4td29tYW4t/d2l0aC1oYXBwaW5l/c3Mtc2VsZmllLWFu/ZC1jb25maWRlbnQt/ZW50cmVwcmVuZXVy/LXdpdGguanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPW8tRzRF/MjdHTkZUYnhGU0c3/UGJhYW1EUEFQTFBS/c2gyV1dndHNpR2RY/REE9"
+                        width="70" height="70" alt="Profile" class="rounded-circle object-fit-cover">
                 </div>
-                <div class="col">
-                    <h2 class="mb-1">Roronona Zoro</h2>
-                    <p class="mb-0">Employee ID: EMP001 | Department: Swordsman Division</p>
-                </div>
+                <div class="col"></div>
+                <h2 class="mb-1">John Doe</h2>
+                <p class="mb-0">Employee ID: EMP123 | Department: IT Department</p>
             </div>
+        </div>
         </div>
 
         <!-- Personal Information -->
-        <div class="row">
-            <div class="col-md-6 ">
-                <div class="card info-card mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h5 class="section-title">Basic Information</h5>
-                            <button class="btn btn-sm btn-outline-primary edit-button">
-                                <i class="fas fa-edit"></i> Edit
-                            </button>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Full Name</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Roronona Zoro
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Date of Birth</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                November 11, 1999
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Gender</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Male
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Blood Group</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                O+
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Marital Status</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Single
-                            </div>
-                        </div>
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-6 col-lg-6 mb-4">
+                <div class="card shadow-none info-card border-0">
+                <div class="card-body p-0">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Basic Information</h5>
+                    <button class="btn btn-sm btn-outline-primary edit-button">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Full Name</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        John Doe
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Date of Birth</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        January 15, 1985
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Gender</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        Male
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Blood Group</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        A+
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Marital Status</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        Married
+                    </div>
                     </div>
                 </div>
-
-                <div class="card info-card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h5 class="section-title">Contact Information</h5>
-                            <button class="btn btn-sm btn-outline-primary edit-button">
-                                <i class="fas fa-edit"></i> Edit
-                            </button>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Email</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                zoro@roronoa.com
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Phone</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                +1 234 567 8900
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Emergency Contact</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Monkey D. Luffy<br>
-                                +1 234 567 8901
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="card info-card mb-4">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h5 class="section-title">Address Details</h5>
-                            <button class="btn btn-sm btn-outline-primary edit-button">
-                                <i class="fas fa-edit"></i> Edit
-                            </button>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Current Address</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                123 Grand Line Street<br>
-                                East Blue City, GL 12345
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Permanent Address</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                456 Shimotsuki Village<br>
-                                East Blue Region, GL 67890
-                            </div>
-                        </div>
+            <div class="col-md-6 col-lg-6 mb-4">
+                <div class="card shadow-none info-card border-0">
+                <div class="card-body p-0">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Contact Information</h5>
+                    <button class="btn btn-sm btn-outline-primary edit-button">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Email</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        john.doe@example.com
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Phone</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        +1 555 123 4567
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Emergency Contact</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        Jane Doe<br>
+                        +1 555 765 4321
+                    </div>
                     </div>
                 </div>
+                </div>
+            </div>
 
-                <div class="card info-card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h5 class="section-title mb-4">Professional Details</h5>
-                            <button class="btn btn-sm btn-outline-primary edit-button">
-                                <i class="fas fa-edit"></i> Edit
-                            </button>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Department</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Swordsman Division
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Designation</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Senior Swordsman
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Join Date</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                January 1, 2020
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-4">
-                                <strong>Employee Type</strong>
-                            </div>
-                            <div class="col-sm-8">
-                                Full Time
-                            </div>
-                        </div>
+            <div class="col-md-6 col-lg-6 mb-4">
+                <div class="card shadow-none info-card border-0">
+                <div class="card-body p-0">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title">Address Details</h5>
+                    <button class="btn btn-sm btn-outline-primary edit-button">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Current Address</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        789 Elm Street<br>
+                        Springfield, IL 62704
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Permanent Address</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        123 Maple Avenue<br>
+                        Springfield, IL 62701
+                    </div>
                     </div>
                 </div>
+                </div>
+            </div>
 
-                <div class="card info-card" hidden>
-                    <div class="card-body">
-                        <h5 class="section-title mb-4">Documents</h5>
-                        <div class="list-group">
-                            <a href="#"
-                                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                <div>
-                                    <i class="fas fa-file-pdf me-2 text-danger"></i>
-                                    ID Proof
-                                </div>
-                                <div>
-                                    <button class="btn btn-sm btn-primary me-2">View</button>
-                                    <button class="btn btn-sm btn-success">Update</button>
-                                </div>
-                            </a>
-                            <a href="#"
-                                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                <div>
-                                    <i class="fas fa-file-pdf me-2 text-danger"></i>
-                                    Address Proof
-                                </div>
-                                <div>
-                                    <button class="btn btn-sm btn-primary me-2">View</button>
-                                    <button class="btn btn-sm btn-success">Update</button>
-                                </div>
-                            </a>
-                            <a href="#"
-                                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                                <div>
-                                    <i class="fas fa-file-pdf me-2 text-danger"></i>
-                                    Resume
-                                </div>
-                                <div>
-                                    <button class="btn btn-sm btn-primary me-2">View</button>
-                                    <button class="btn btn-sm btn-success">Update</button>
-                                </div>
-                            </a>
-                        </div>
+            <div class="col-md-6 col-lg-6 mb-4">
+                <div class="card shadow-none info-card border-0">
+                <div class="card-body p-0">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5 class="section-title mb-4">Professional Details</h5>
+                    <button class="btn btn-sm btn-outline-primary edit-button">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Department</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        IT Department
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Designation</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        Senior Developer
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Join Date</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        March 1, 2015
+                    </div>
+                    </div>
+                    <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <strong>Employee Type</strong>
+                    </div>
+                    <div class="col-sm-8">
+                        Full Time
+                    </div>
                     </div>
                 </div>
+                </div>
+            </div>
             </div>
         </div>
     </main>

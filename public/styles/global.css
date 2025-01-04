@@ -11,10 +11,19 @@
 
 /* Define reusable color variables */
 :root {
-    --primary-color: #aa3e98; /* Main red color */
-    --light-border: rgba(25, 50, 91, 0.2); /* Light border color */
-    --hover-background-light: rgba(0, 0, 0, 0.188); /* Light hover background */
-    --text-light: #ffffff; /* Light text color */
+    --primary: #8b5cf6;
+    --primary-dark: #7c3aed;
+    --secondary: #64748b;
+    --surface: #f8fafc;
+    --surface-dark: #f1f5f9;
+    --text: #0f172a;
+    --accent: #c084fc;
+    --gradient-start: #8b5cf6;
+    --gradient-end: #d946ef;
+    --primary-color: var(--primary); /* For backwards compatibility */
+    --light-border: var(--surface-dark);
+    --hover-background-light: var(--surface-dark);
+    --text-light: #ffffff;
 }
 
 /* Light button styles */
