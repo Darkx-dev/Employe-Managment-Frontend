@@ -166,27 +166,49 @@
     <header>
       <nav class="navbar d-lg-none">
         <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
             aria-controls="offcanvasExample">
             <span class="navbar-toggler-icon"></span>
           </button>
+          <!-- Profile Dropdown -->
+          <div class="dropdown">
+            <button class="btn btn-light d-flex align-items-center" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <span>John Doe</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end p-2">
+              <!-- Profile Header -->
+              <li class="profile-header">
+                <img
+                  src="https://imgs.search.brave.com/WloLO0sI2tMTY9YAZosYfuNuFVNTyZ5QA5zk0A8crHY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hdmF0/YXJmaWxlcy5hbHBo/YWNvZGVycy5jb20v/MzQ0LzM0NDcwNC5w/bmc"
+                  alt="Avatar" class="profile-avatar rounded-circle object-fit-cover" width="90">
+                <div class="mt-2">John Doe</div>
+                <div class="profile-email">john.doe@example.com</div>
+              </li>
+              <!-- Dropdown Items -->
+              <li><a class="dropdown-item fs-5 fw-medium" href="./profile">View Profile</a></li>
+              <li><a class="dropdown-item text-danger fs-5 fw-medium" href="/logout">Logout</a></li>
+            </ul>
+          </div>
           <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
             aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Astron</h5>
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                Astron
+              </h5>
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                 aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav fw-medium fs-5">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                  <a class="nav-link active" aria-current="page" href="./dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Roles</a>
+                  <a class="nav-link" href="./employees">Employees</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Employees</a>
+                  <a class="nav-link" href="./leave-managment">Manage Leaves</a>
                 </li>
               </ul>
             </div>
@@ -195,7 +217,7 @@
       </nav>
     </header>
     <!-- Main content -->
-    <div class="mt-lg-5 p-3 p-lg-5">
+    <div class="p-3">
       <div class="card">
         <div class="card-body">
           <form id="add-emp-form">
