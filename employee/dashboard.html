@@ -1,287 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Employee Dashboard</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../public/styles/global.css" />
     <link rel="stylesheet" href="../public/styles/sidebar.css" />
     <link rel="stylesheet" href="../public/styles/avatar.css" />
     <link rel="stylesheet" href="../public/styles/dashboard.css" />
     <style>
-        main {
-            width: 100%;
-        }
+      main {
+        width: 100%;
+      }
 
-        .profile-header {
-            background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
-            color: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
+      .welcome-banner {
+        background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+        color: white;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
 
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid white;
-        }
+      .stat-card {
+        transition: transform 0.2s;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        height: 100%;
+      }
 
-        .stat-card {
-            transition: transform 0.2s;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+      .stat-card:hover {
+        transform: translateY(-5px);
+      }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
+      .stat-icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.2);
+      }
 
-        .progress {
-            height: 10px;
-            border-radius: 5px;
-        }
+      .project-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+      }
 
-        .schedule-item {
-            border-left: 3px solid #4e73df;
-            padding-left: 1rem;
-            margin-bottom: 1rem;
-        }
+      .project-card:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
 
-        .badge-custom {
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-        }
+      .avatar-stack {
+        display: flex;
+        margin-right: 1rem;
+      }
 
-        .avatar-group img {
-            border: 2px solid black;
-        }
+      .avatar-stack img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 2px solid white;
+        margin-left: -10px;
+      }
 
-        .avatar-group>*:not(:first-child) {
-            margin-left: -0.7rem;
+      .quick-action {
+        background: #f8f9fa;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+      }
 
-        }
+      .quick-action:hover {
+        background: #e9ecef;
+        transform: translateY(-2px);
+      }
+
+      .status-badge {
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: 500;
+      }
     </style>
-</head>
-
-<body class="bg-light d-flex">
+  </head>
+  <body class="bg-light d-flex">
     <aside>
-        <div class="d-flex "></div>
-        <img class="avatar shadow-medium mx-auto"
-            src="https://imgs.search.brave.com/PUs-9qXlTnNWXF5aegQQvjlXb_7ilrK7GtUPFT8PoBc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzI3/YTVlYmViLWI5NDEt/NDBmZi04MWNhLTRi/YzgzOWQ3NWQyNy9k/ZzJwanUyLWM2YmQz/ZWNmLTExNmMtNDA0/Ny05NDNiLTg5Y2I2/ZTE4ZDk4NS5qcGc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekkzWVRWbFltVmlM/V0k1TkRFdE5EQm1a/aTA0TVdOaExUUmlZ/emd6T1dRM05XUXlO/MXd2WkdjeWNHcDFN/aTFqTm1Ka00yVmpa/aTB4TVRaakxUUXdO/RGN0T1RRellpMDRP/V05pTm1VeE9HUTVP/RFV1YW5CbkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuWXUzZy1yb2pV/MXBSWGRlVDJ3WHhr/R2dQem00OVVZcWM2/ejRTSEpfdGgxdw"
-            width="100" alt="">
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
-                data-bs-toggle="dropdown">
-                <div>
-                    <div class="fw-bold">Roronona Zoro</div>
-                    <div class="small text-muted">zoro@roronoa.com</div>
-                </div>
-                <i class="fas fa-chevron-down"></i>
-            </button>
-            <ul class="dropdown-menu w-100">
-                <li><a class="dropdown-item" href="./profile"><i class="fas fa-user me-2"></i>Profile</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fas fa-gear me-2"></i>Settings</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-right-from-bracket me-2"></i>Log
-                        out</a></li>
-            </ul>
-        </div>
-        <a class="active">
-            <i class="fa-solid fa-house"></i>
-            <span>Dashboard</span>
-        </a>
-        <a class="" hidden>
-            <i class="fa-solid fa-briefcase"></i>
-            <span>Roles</span>
-        </a>
-        <a class="" href="./bank-details">
-            <i class="fa-solid fa-briefcase"></i>
-            <span>Bank Details</span>
-        </a>
-        <a href="./leave-managment">
-            <i class="fa-solid fa-gear"></i>
-            <span>Manage Leaves</span>
-        </a>
+      <div class="d-flex">
+        <img
+          class="avatar shadow-medium mx-auto"
+          src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+          width="100"
+          alt=""
+        />
+      </div>
+      <div class="dropdown">
+        <button
+          class="btn btn-light w-100 d-flex align-items-center justify-content-between"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          <div>
+            <div class="fw-bold">Elon Musk</div>
+            <div class="small text-muted">zoro@roronoa.com</div>
+          </div>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <ul class="dropdown-menu w-100">
+          <li>
+            <a class="dropdown-item" href="./profile"
+              ><i class="fas fa-user me-2"></i>Profile</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="/settings"
+              ><i class="fas fa-gear me-2"></i>Settings</a
+            >
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a class="dropdown-item text-danger" href="/logout"
+              ><i class="fas fa-right-from-bracket me-2"></i>Log out</a
+            >
+          </li>
+        </ul>
+      </div>
+      <a class="active" href="./dashboard">
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+      </a>
+      <a class="" href="./bank-details">
+        <i class="fa-solid fa-briefcase"></i>
+        <span>Bank Details</span>
+      </a>
+      <a href="./leave-managment">
+        <i class="fa-solid fa-gear"></i>
+        <span>Manage Leaves</span>
+      </a>
     </aside>
-    <main class="p-2 p-lg-4">
-        <div class="welcome-section">
-            <div class="row align-items-center">
-                <div class="col">
-                    <h2 class="mb-1">Welcome Back, Roronona Zoro!</h2>
-                    <p class="mb-0">Employee ID: EMP001 | Department: Swordsman Division</p>
-                </div>
-                <div class="col-auto">
-                    <div class="text-end">
-                        <p class="mb-1">Today's Date: <span id="currentDate"></span></p>
-                        <p class="mb-0">Clock In Time: 9:00 AM</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row g-4 mb-4 pt-2">
-            <div class="col-md-3">
-                <div class="stat-card card bg-primary text-white">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h6 class="card-title">Attendance Rate</h6>
-                                <h3 class="mb-0">98.5%</h3>
-                            </div>
-                            <i class="fas fa-calendar fa-2x opacity-50"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="stat-card card bg-success text-white">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h6 class="card-title">Leave Balance</h6>
-                                <h3 class="mb-0">15 Days</h3>
-                            </div>
-                            <i class="fas fa-bed fa-2x opacity-50"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="stat-card card bg-info text-white">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h6 class="card-title">Active Projects</h6>
-                                <h3 class="mb-0">4</h3>
-                            </div>
-                            <i class="fas fa-project-diagram fa-2x opacity-50"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="stat-card card bg-warning text-white">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h6 class="card-title">Pending Tasks</h6>
-                                <h3 class="mb-0">7</h3>
-                            </div>
-                            <i class="fas fa-tasks fa-2x opacity-50"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row gap-4 ">
-            <div class="col border rounded-3 p-2">
-                <h4>Current Projects</h4>
-                <div class="card border-0">
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover table-borderless">
-                                <thead>
-                                    <tr>
-                                        <th>Project Name</th>
-                                        <th>Deadline</th>
-                                        <th class="d-lg-block d-none">Team</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Grand Line Exploration</td>
-                                        <td>Dec 31, 2024</td>
-                                        <td class="d-lg-block d-none">
-                                            <div class="avatar-group">
-                                                <img src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
-                                                    class="rounded-circle" alt="Team Member" width="40" height="40"
-                                                    class="object-fot-cover">
-                                                <img src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
-                                                    class="rounded-circle" alt="Team Member" width="40" height="40"
-                                                    class="object-fot-cover">
-                                                <img src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
-                                                    class="rounded-circle" alt="Team Member" width="40" height="40"
-                                                    class="object-fot-cover">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="status">
-                                                <span class="badge badge-custom bg-success">Completed</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Marine HQ Project</td>
-                                        <td>Jan 15, 2025</td>
-                                        <td class="d-lg-block d-none">
-                                            <div class="avatar-group">
-                                                <img src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
-                                                    class="rounded-circle" alt="Team Member" width="40" height="40"
-                                                    class="object-fot-cover">
-                                                <img src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
-                                                    class="rounded-circle" alt="Team Member" width="40" height="40"
-                                                    class="object-fot-cover">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="status">
-                                                <span class="badge badge-custom bg-warning">Pending</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 border p-2 rounded-3">
-                <h4>Quick Access</h4>
-                <div class="card shadow-none border-0">
 
-                    <div class="card-body p-0">
-                        <div class="quick-access-card p-3 mb-3">
-                            <a href="./apply-leave.html">
-                                <h6><i class="fas fa-calendar-plus me-2"></i>Apply Leave</h6>
-                            </a>
-                            <small class="text-muted">Request time off or check leave status</small>
-                        </div>
-                        <div class="quick-access-card p-3">
-
-                            <a href="./profile">
-                                <h6><i class="fas fa-user-edit me-2"></i>Update Profile</h6>
-                            </a>
-                            <small class="text-muted">Edit your personal information</small>
-                        </div>
-                    </div>
-                </div>
+    <main>
+      <!-- Mobile Responsive navbar -->
+      <header>
+        <nav class="navbar d-lg-none">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler border-0"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasExample"
+              aria-controls="offcanvasExample"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Profile Dropdown -->
+            <div class="dropdown">
+              <button
+                class="btn btn-light d-flex align-items-center"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span>John Doe</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end p-2">
+                <!-- Profile Header -->
+                <li class="profile-header">
+                  <img
+                    src="https://imgs.search.brave.com/WloLO0sI2tMTY9YAZosYfuNuFVNTyZ5QA5zk0A8crHY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hdmF0/YXJmaWxlcy5hbHBo/YWNvZGVycy5jb20v/MzQ0LzM0NDcwNC5w/bmc"
+                    alt="Avatar"
+                    class="profile-avatar rounded-circle object-fit-cover"
+                    width="90"
+                  />
+                  <div class="mt-2">John Doe</div>
+                  <div class="profile-email">john.doe@example.com</div>
+                </li>
+                <!-- Dropdown Items -->
+                <li>
+                  <a class="dropdown-item fs-5" href="./profile"
+                    >View Profile</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item text-danger fs-5 fw-medium"
+                    href="/logout"
+                    >Logout</a
+                  >
+                </li>
+              </ul>
             </div>
+            <div
+              class="offcanvas offcanvas-start"
+              tabindex="-1"
+              id="offcanvasExample"
+              aria-labelledby="offcanvasExampleLabel"
+            >
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+                  Astron
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close text-reset"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav fw-medium fs-5">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="./dashboard"
+                      >Dashboard</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./bank-details">Bank Details</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./leave-managment"
+                      >Manage Leaves</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div class="p-3 pt-0 pt-lg-3">
+        <!-- Welcome Banner -->
+        <div class="welcome-banner mb-4">
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h2 class="mb-1">Welcome Back, Elon Musk! 👋</h2>
+              <p class="mb-0 opacity-75">
+                Employee ID: EMP001 | Swordsman Division |
+                <i class="fas fa-clock me-1"></i> Clock In: 9:00 AM
+              </p>
+            </div>
+            <div class="col-md-4 text-md-end">
+              <h5 class="mb-1">
+                <i class="fas fa-calendar-day me-2"></i
+                ><span id="currentDate"></span>
+              </h5>
+            </div>
+          </div>
         </div>
+
+        <!-- Statistics Cards -->
+        <div class="row g-4 mb-4">
+          <div class="col-md-3">
+            <div class="stat-card card bg-primary text-white">
+              <div class="card-body d-flex align-items-center">
+                <div class="stat-icon me-3">
+                  <i class="fas fa-chart-line fa-lg"></i>
+                </div>
+                <div>
+                  <h6 class="card-title mb-1">Attendance Rate</h6>
+                  <h3 class="mb-0">98.5%</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card card bg-success text-white">
+              <div class="card-body d-flex align-items-center">
+                <div class="stat-icon me-3">
+                  <i class="fas fa-calendar-check fa-lg"></i>
+                </div>
+                <div>
+                  <h6 class="card-title mb-1">Leave Balance</h6>
+                  <h3 class="mb-0">15 Days</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card card bg-info text-white">
+              <div class="card-body d-flex align-items-center">
+                <div class="stat-icon me-3">
+                  <i class="fas fa-project-diagram fa-lg"></i>
+                </div>
+                <div>
+                  <h6 class="card-title mb-1">Active Projects</h6>
+                  <h3 class="mb-0">4</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card card bg-warning text-white">
+              <div class="card-body d-flex align-items-center">
+                <div class="stat-icon me-3">
+                  <i class="fas fa-tasks fa-lg"></i>
+                </div>
+                <div>
+                  <h6 class="card-title mb-1">Pending Tasks</h6>
+                  <h3 class="mb-0">7</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column gap-3">
+          <!-- Quick Actions -->
+          <div class="">
+            <div class="card project-card">
+              <div class="card-body">
+                <h4 class="card-title mb-4">Quick Actions</h4>
+                <div class="row">
+                  <a
+                    href="./apply-leave.html"
+                    class="quick-action d-block p-3 col"
+                  >
+                    <div class="d-flex align-items-center">
+                      <div class="stat-icon bg-primary text-white me-3">
+                        <i class="fas fa-calendar-plus"></i>
+                      </div>
+                      <div>
+                        <h6 class="mb-1">Apply for Leave</h6>
+                        <small class="text-muted"
+                          >Request time off or check leave status</small
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="./profile" class="quick-action d-block p-3 col">
+                    <div class="d-flex align-items-center">
+                      <div class="stat-icon bg-success text-white me-3">
+                        <i class="fas fa-user-edit"></i>
+                      </div>
+                      <div>
+                        <h6 class="mb-1">Update Profile</h6>
+                        <small class="text-muted"
+                          >Edit your personal information</small
+                        >
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Projects Section -->
+          <div class="">
+            <div class="card project-card">
+              <div class="card-body">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-4"
+                >
+                  <h4 class="card-title mb-0">Current Projects</h4>
+                  <button class="btn btn-outline-primary btn-sm">
+                    View All
+                  </button>
+                </div>
+                <div class="table-responsive">
+                  <table class="table table-borderless table-hover">
+                    <thead>
+                      <tr>
+                        <th>Project Name</th>
+                        <th>Team</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            Grand Line Exploration
+                          </div>
+                        </td>
+                        <td>
+                          <div class="avatar-stack align-items-center">
+                            <img
+                              src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+                              alt="Team Member"
+                            />
+                            <img
+                              src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+                              alt="Team Member"
+                            />
+                            <img
+                              src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+                              alt="Team Member"
+                            />
+                            + 2
+                          </div>
+                        </td>
+                        <td>Dec 31, 2024</td>
+                        <td>
+                          <span
+                            class="status-badge badge border border-success text-success"
+                            >Completed</span
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            Marine HQ Project
+                          </div>
+                        </td>
+                        <td>
+                          <div class="avatar-stack">
+                            <img
+                              src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+                              alt="Team Member"
+                            />
+                            <img
+                              src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+                              alt="Team Member"
+                            />
+                          </div>
+                        </td>
+                        <td>Jan 15, 2025</td>
+                        <td>
+                          <span
+                            class="status-badge badge border border-warning text-warning"
+                            >Pending</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-            tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl);
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        const tooltipTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        );
+        tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
         });
-        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+      });
+      document.getElementById("currentDate").textContent =
+        new Date().toLocaleDateString("en-US", {
+          weekday: "long",
+          year: "numeric",
+          month: "long",
+          day: "numeric",
         });
     </script>
-</body>
-
+  </body>
 </html>
