@@ -14,83 +14,9 @@
     />
     <link rel="stylesheet" href="../public/styles/global.css" />
     <link rel="stylesheet" href="../public/styles/sidebar.css" />
-    <link rel="stylesheet" href="../public/styles/avatar.css" />
-    <link rel="stylesheet" href="../public/styles/dashboard.css" />
     <style>
       main {
         width: 100%;
-      }
-
-      .welcome-banner {
-        background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
-        color: white;
-        border-radius: 15px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      .stat-card {
-        transition: transform 0.2s;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        height: 100%;
-      }
-
-      .stat-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .stat-icon {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.2);
-      }
-
-      .project-card {
-        border: 1px solid #e0e0e0;
-        border-radius: 15px;
-        transition: all 0.3s ease;
-      }
-
-      .project-card:hover {
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .avatar-stack {
-        display: flex;
-        margin-right: 1rem;
-      }
-
-      .avatar-stack img {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        border: 2px solid white;
-        margin-left: -10px;
-      }
-
-      .quick-action {
-        background: #f8f9fa;
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .quick-action:hover {
-        background: #e9ecef;
-        transform: translateY(-2px);
-      }
-
-      .status-badge {
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-weight: 500;
       }
     </style>
   </head>
@@ -99,7 +25,7 @@
       <div class="d-flex">
         <img
           class="avatar shadow-medium mx-auto"
-          src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+          src="/public/images/emp1.jpg"
           width="100"
           alt=""
         />
@@ -111,8 +37,8 @@
           data-bs-toggle="dropdown"
         >
           <div>
-            <div class="fw-bold">Elon Musk</div>
-            <div class="small text-muted">zoro@roronoa.com</div>
+            <div class="fw-bold">Peter Parker</div>
+            <div class="small text-muted">peter.p@email.com</div>
           </div>
           <i class="fas fa-chevron-down"></i>
         </button>
@@ -173,19 +99,19 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span>John Doe</span>
+                <span>Peter Parker</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end p-2">
                 <!-- Profile Header -->
                 <li class="profile-header">
                   <img
-                    src="https://imgs.search.brave.com/WloLO0sI2tMTY9YAZosYfuNuFVNTyZ5QA5zk0A8crHY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hdmF0/YXJmaWxlcy5hbHBo/YWNvZGVycy5jb20v/MzQ0LzM0NDcwNC5w/bmc"
+                    src="/public/images/emp1.jpg"
                     alt="Avatar"
                     class="profile-avatar rounded-circle object-fit-cover"
                     width="90"
                   />
-                  <div class="mt-2">John Doe</div>
-                  <div class="profile-email">john.doe@example.com</div>
+                  <div class="mt-2">Peter Parker</div>
+                  <div class="profile-email">peter.p@email.com</div>
                 </li>
                 <!-- Dropdown Items -->
                 <li>
@@ -249,9 +175,9 @@
         <div class="welcome-banner mb-4">
           <div class="row align-items-center">
             <div class="col-md-8">
-              <h2 class="mb-1">Welcome Back, Elon Musk! 👋</h2>
+              <h2 class="mb-1">Welcome Back, Peter Parker! 👋</h2>
               <p class="mb-0 opacity-75">
-                Employee ID: EMP001 | Swordsman Division |
+                Employee ID: EMP001 | Frontend Developer |
                 <i class="fas fa-clock me-1"></i> Clock In: 9:00 AM
               </p>
             </div>
@@ -386,21 +312,21 @@
                       <tr>
                         <td>
                           <div class="d-flex align-items-center">
-                            Grand Line Exploration
+                             Google Drive API
                           </div>
                         </td>
                         <td>
                           <div class="avatar-stack align-items-center">
                             <img
-                              src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+                              src="/public/images/emp1.jpg"
                               alt="Team Member"
                             />
                             <img
-                              src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+                              src="/public/images/emp1.jpg"
                               alt="Team Member"
                             />
                             <img
-                              src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+                              src="/public/images/emp1.jpg"
                               alt="Team Member"
                             />
                             + 2
@@ -417,17 +343,17 @@
                       <tr>
                         <td>
                           <div class="d-flex align-items-center">
-                            Marine HQ Project
+                            Redesigned Facebook
                           </div>
                         </td>
                         <td>
                           <div class="avatar-stack">
                             <img
-                              src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+                              src="/public/images/emp1.jpg"
                               alt="Team Member"
                             />
                             <img
-                              src="https://i.pinimg.com/736x/bc/70/ee/bc70ee366bf0c5906bfdcdb1eda15d4c.jpg"
+                              src="/public/images/emp1.jpg"
                               alt="Team Member"
                             />
                           </div>

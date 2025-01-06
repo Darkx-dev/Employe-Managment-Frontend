@@ -14,31 +14,9 @@
     />
     <link rel="stylesheet" href="../public/styles/global.css" />
     <link rel="stylesheet" href="../public/styles/sidebar.css" />
-    <link rel="stylesheet" href="../public/styles/avatar.css" />
-    <link rel="stylesheet" href="../public/styles/dashboard.css" />
     <style>
       main {
         width: 100%;
-      }
-
-      .profile-img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        border: 4px solid white;
-      }
-
-      .progress {
-        height: 10px;
-        border-radius: 5px;
-      }
-
-      .avatar-group img {
-        border: 2px solid black;
-      }
-
-      .avatar-group > *:not(:first-child) {
-        margin-left: -0.7rem;
       }
     </style>
   </head>
@@ -48,7 +26,7 @@
       <div class="d-flex">
         <img
           class="avatar shadow-medium mx-auto"
-          src="https://imgs.search.brave.com/PUs-9qXlTnNWXF5aegQQvjlXb_7ilrK7GtUPFT8PoBc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzI3/YTVlYmViLWI5NDEt/NDBmZi04MWNhLTRi/YzgzOWQ3NWQyNy9k/ZzJwanUyLWM2YmQz/ZWNmLTExNmMtNDA0/Ny05NDNiLTg5Y2I2/ZTE4ZDk4NS5qcGc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekkzWVRWbFltVmlM/V0k1TkRFdE5EQm1a/aTA0TVdOaExUUmlZ/emd6T1dRM05XUXlO/MXd2WkdjeWNHcDFN/aTFqTm1Ka00yVmpa/aTB4TVRaakxUUXdO/RGN0T1RRellpMDRP/V05pTm1VeE9HUTVP/RFV1YW5CbkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuWXUzZy1yb2pV/MXBSWGRlVDJ3WHhr/R2dQem00OVVZcWM2/ejRTSEpfdGgxdw"
+          src="/public/images/emp1.jpg"
           width="100"
           alt=""
         />
@@ -60,8 +38,8 @@
           data-bs-toggle="dropdown"
         >
           <div>
-            <div class="fw-bold">Roronona Zoro</div>
-            <div class="small text-muted">zoro@roronoa.com</div>
+            <div class="fw-bold">Peter Parker</div>
+            <div class="small text-muted">peter.p@email.com</div>
           </div>
           <i class="fas fa-chevron-down"></i>
         </button>
@@ -72,20 +50,15 @@
             >
           </li>
           <li>
-            <a class="dropdown-item" href="#"
+            <a class="dropdown-item" href="/settings"
               ><i class="fas fa-gear me-2"></i>Settings</a
-            >
-          </li>
-          <li>
-            <a class="dropdown-item" href="#"
-              ><i class="fas fa-bell me-2"></i>Notifications</a
             >
           </li>
           <li>
             <hr class="dropdown-divider" />
           </li>
           <li>
-            <a class="dropdown-item text-danger" href="#"
+            <a class="dropdown-item text-danger" href="/logout"
               ><i class="fas fa-right-from-bracket me-2"></i>Log out</a
             >
           </li>
@@ -126,19 +99,19 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <span>John Doe</span>
+                <span>Peter Parker</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end p-2">
                 <!-- Profile Header -->
                 <li class="profile-header">
                   <img
-                    src="https://imgs.search.brave.com/WloLO0sI2tMTY9YAZosYfuNuFVNTyZ5QA5zk0A8crHY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hdmF0/YXJmaWxlcy5hbHBo/YWNvZGVycy5jb20v/MzQ0LzM0NDcwNC5w/bmc"
+                    src="/public/images/emp1.jpg"
                     alt="Avatar"
                     class="profile-avatar rounded-circle object-fit-cover"
                     width="90"
                   />
-                  <div class="mt-2">John Doe</div>
-                  <div class="profile-email">john.doe@example.com</div>
+                  <div class="mt-2">Peter Parker</div>
+                  <div class="profile-email">peter.p@email.com</div>
                 </li>
                 <!-- Dropdown Items -->
                 <li>
@@ -195,129 +168,146 @@
       </header>
       <!-- Main content -->
       <div class="p-3">
-        <h1>Manage your leaves</h1>
-        <div class="container-fluid px-0">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+        <!-- Header Section -->
+        <div class="welcome-banner mb-3">
+          <div class="row align-items-center">
             <div class="col">
-              <div class="stat-card card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold mb-3">Annual Leave</h5>
-                  <p class="card-text text-muted mb-3">
-                    <span class="h4 fw-bold text-dark">13</span> days remaining
-                  </p>
-                  <div class="progress mb-2">
-                    <div
-                      class="progress-bar bg-primary"
-                      role="progressbar"
-                      style="width: 65%"
-                      aria-valuenow="13"
-                      aria-valuemin="0"
-                      aria-valuemax="20"
-                    ></div>
-                  </div>
-                  <small class="text-muted">13 out of 20 days available</small>
-                </div>
-              </div>
+              <h2 class="mb-1">Leave Management</h2>
+              <p class="mb-0">Track and manage your leave requests</p>
             </div>
-            <div class="col">
-              <div class="stat-card card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold mb-3">Sick Leave</h5>
-                  <p class="card-text text-muted mb-3">
-                    <span class="h4 fw-bold text-dark">20</span> days remaining
-                  </p>
-                  <div class="progress mb-2">
-                    <div
-                      class="progress-bar bg-success"
-                      role="progressbar"
-                      style="width: 100%"
-                      aria-valuenow="20"
-                      aria-valuemin="0"
-                      aria-valuemax="20"
-                    ></div>
-                  </div>
-                  <small class="text-muted">20 out of 20 days available</small>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="stat-card card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fw-bold mb-3">Earned Leave</h5>
-                  <p class="card-text text-muted mb-3">
-                    <span class="h4 fw-bold text-dark">5</span> days remaining
-                  </p>
-                  <div class="progress mb-2">
-                    <div
-                      class="progress-bar bg-warning"
-                      role="progressbar"
-                      style="width: 25%"
-                      aria-valuenow="5"
-                      aria-valuemin="0"
-                      aria-valuemax="20"
-                    ></div>
-                  </div>
-                  <small class="text-muted">5 out of 20 days available</small>
-                </div>
-              </div>
+            <div class="col-auto">
+              <a
+                class="btn btn-light" href="./apply-leave"
+              >
+                <i class="fas fa-plus me-2"></i>Apply for Leave
+              </a>
             </div>
           </div>
         </div>
-
-        <div>
-          <!-- Pending request or completed  -->
-          <div class="mt-3">
-            <h2>Leave Requests</h2>
-            <!-- Table -->
-            <div class="table-responsive">
-              <table class="table table-borderless table-hover">
-                <thead>
-                  <tr>
-                    <th>Leave Type</th>
-                    <th>From Date</th>
-                    <th>To Date</th>
-                    <th>Days</th>
-                    <th>Reason</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Annual Leave</td>
-                    <td>Jan 12</td>
-                    <td>Jan 14</td>
-                    <td>5</td>
-                    <td>Family vacation</td>
-                    <td><span class="badge bg-warning">Pending</span></td>
-                  </tr>
-                  <tr>
-                    <td>Sick Leave</td>
-                    <td>Jan 02</td>
-                    <td>Jan 07</td>
-                    <td>5</td>
-                    <td>Medical appointment</td>
-                    <td><span class="badge bg-success">Approved</span></td>
-                  </tr>
-                  <tr>
-                    <td>Annual Leave</td>
-                    <td>Dec 18</td>
-                    <td>Dec 20</td>
-                    <td>2</td>
-                    <td>Christmas holiday</td>
-                    <td><span class="badge bg-danger">Rejected</span></td>
-                  </tr>
-                </tbody>
-              </table>
+        <div class="container-fluid px-0">
+          <div class="row row-cols-md-1 row-cols-lg-2 g-3">
+            <!-- Leave Balance -->
+            <div class="col col-lg-3">
+              <div class="card leave-card h-100">
+                <div class="card-body">
+                  <h5 class="section-title mb-4">Leave Balance</h5>
+                  <div class="row g-3">
+                    <div class="col-6">
+                      <div class="card h-100 bg-primary text-white">
+                        <div
+                          class="card-body d-flex flex-column align-items-start justify-content-center"
+                        >
+                          <h3 class="mb-1">15</h3>
+                          <small>Annual Leave</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="card h-100 bg-success text-white">
+                        <div
+                          class="card-body d-flex flex-column align-items-start justify-content-center"
+                        >
+                          <h3 class="mb-1">10</h3>
+                          <small>Sick Leave</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="card h-100 bg-info text-white">
+                        <div
+                          class="card-body d-flex flex-column align-items-start justify-content-center"
+                        >
+                          <h3 class="mb-1">5</h3>
+                          <small>Personal Leave</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="card h-100 bg-warning text-white">
+                        <div
+                          class="card-body d-flex flex-column align-items-start justify-content-center"
+                        >
+                          <h3 class="mb-1">3</h3>
+                          <small>Comp Off</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="row">
-              <div class="">
-                <a
-                  href="./apply-leave"
-                  class="fw-bold verticle-center d-flex justify-content-center align-items-center text-white p-3 rounded mt-4"
-                  style="background-color: var(--primary)"
-                >
-                  Apply for leave
-                </a>
+            <div class="col col-lg-9">
+              <!-- Table -->
+              <div class="card h-100 w-100">
+                <div class="card-body">
+                  <h5>Leave Requests</h5>
+                  <div class="table-responsive">
+                    <table class="table table-borderless table-hover">
+                      <thead>
+                        <tr>
+                          <th>Type</th>
+                          <th>From</th>
+                          <th>To</th>
+                          <th>Days</th>
+                          <th>Status</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Annual Leave</td>
+                          <td>Jan 12</td>
+                          <td>Jan 14</td>
+                          <td>5</td>
+                          <td>
+                            <span class="badge w-100 py-3 bg-warning">Pending</span>
+                          </td>
+                          <td>
+                            <a
+                              class="btn btn-sm text-danger border border-danger w-100"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                            >
+                              Cancle
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Sick Leave</td>
+                          <td>Jan 02</td>
+                          <td>Jan 07</td>
+                          <td>5</td>
+                          <td>
+                            <span class="badge w-100 py-3 h-100 bg-success"
+                              >Approved</span
+                            >
+                          </td>
+                          <td>
+                            <a
+                              class="btn btn-sm border border-dark w-100"
+                              type="button"
+                              data-bs-toggle="dropdown"
+                            >
+                              View
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Annual Leave</td>
+                          <td>Dec 18</td>
+                          <td>Dec 20</td>
+                          <td>2</td>
+                          <td>
+                            <span class="badge w-100 py-3 h-100 bg-danger"
+                              >Rejected</span
+                            >
+                          </td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

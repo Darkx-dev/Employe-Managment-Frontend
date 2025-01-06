@@ -34,6 +34,7 @@
 .bg-primary {
     background-color: var(--primary) !important;
 }
+
 .btn-outline-primary {
     --bs-btn-border-color: var(--primary) !important;
     color: var(--primary) !important;
@@ -91,7 +92,80 @@
 /* Components */
 .profile-header {
     border-radius: 10px;
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end)  100%);
     color: var(--text-light);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-banner {
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end)  100%);
+    color: white;
+    border-radius: 15px;
     padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    transition: transform 0.2s;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.project-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-stack {
+    display: flex;
+    margin-right: 1rem;
+}
+
+.avatar-stack img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -10px;
+}
+
+.quick-action {
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.quick-action:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
 }

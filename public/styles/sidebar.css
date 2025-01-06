@@ -60,6 +60,11 @@ aside a.active {
     border-radius: 5px;
 }
 
+img.avatar {
+    border-radius: 100%;
+    object-fit: cover;
+}
+
 @media (max-width: 991.2px) {
 
     body {

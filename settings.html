@@ -10,60 +10,13 @@
     <!-- CSS Links -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../public/styles/custom-bootstrap.css">
     <link rel="stylesheet" href="../public/styles/global.css" />
-    <link rel="stylesheet" href="../public/styles/sidebar.css" />
-    <link rel="stylesheet" href="../public/styles/avatar.css" />
-    <link rel="stylesheet" href="../public/styles/dashboard.css" />
     <style>
 
     </style>
 </head>
 
-<body class="bg-light" style="display: none;">
-    <aside>
-        <div class=" d-flex justify-content-center">
-            <img class="avatar shadow-medium "
-                src="https://imgs.search.brave.com/PUs-9qXlTnNWXF5aegQQvjlXb_7ilrK7GtUPFT8PoBc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtd2l4bXAtZWQz/MGE4NmI4YzRjYTg4/Nzc3MzU5NGMyLndp/eG1wLmNvbS9mLzI3/YTVlYmViLWI5NDEt/NDBmZi04MWNhLTRi/YzgzOWQ3NWQyNy9k/ZzJwanUyLWM2YmQz/ZWNmLTExNmMtNDA0/Ny05NDNiLTg5Y2I2/ZTE4ZDk4NS5qcGc_/dG9rZW49ZXlKMGVY/QWlPaUpLVjFRaUxD/SmhiR2NpT2lKSVV6/STFOaUo5LmV5Snpk/V0lpT2lKMWNtNDZZ/WEJ3T2pkbE1HUXhP/RGc1T0RJeU5qUXpO/ek5oTldZd1pEUXhO/V1ZoTUdReU5tVXdJ/aXdpYVhOeklqb2lk/WEp1T21Gd2NEbzNa/VEJrTVRnNE9UZ3lN/alkwTXpjellUVm1N/R1EwTVRWbFlUQmtN/alpsTUNJc0ltOWlh/aUk2VzF0N0luQmhk/R2dpT2lKY0wyWmNM/ekkzWVRWbFltVmlM/V0k1TkRFdE5EQm1a/aTA0TVdOaExUUmlZ/emd6T1dRM05XUXlO/MXd2WkdjeWNHcDFN/aTFqTm1Ka00yVmpa/aTB4TVRaakxUUXdO/RGN0T1RRellpMDRP/V05pTm1VeE9HUTVP/RFV1YW5CbkluMWRY/U3dpWVhWa0lqcGJJ/blZ5YmpwelpYSjJh/V05sT21acGJHVXVa/RzkzYm14dllXUWlY/WDAuWXUzZy1yb2pV/MXBSWGRlVDJ3WHhr/R2dQem00OVVZcWM2/ejRTSEpfdGgxdw"
-                width="100" alt="">
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-light w-100 d-flex align-items-center justify-content-between" type="button"
-                data-bs-toggle="dropdown">
-                <div>
-                    <div class="fw-bold"></div>
-                    <div class="small text-muted"></div>
-                </div>
-                <i class="fas fa-chevron-down"></i>
-            </button>
-            <ul class="dropdown-menu w-100 ">
-                <li><a class="dropdown-item" href="./profile.html"><i class="fas fa-user me-2"></i>Profile</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fas fa-gear me-2"></i>Settings</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-right-from-bracket me-2"></i>Log
-                        out</a></li>
-            </ul>
-        </div>
-        <a class="active">
-            <i class="fa-solid fa-user"></i>
-            <span>Personal Details</span>
-        </a>
-        <a class="" href="./dashboard.html">
-            <i class="fa-solid fa-house"></i>
-            <span>Dashboard</span>
-        </a>
-        <a class="" href="./employees.html">
-            <i class="fa-solid fa-briefcase"></i>
-            <span>Employees</span>
-        </a>
-        <a href="./leave-managment.html">
-            <i class="fa-solid fa-gear"></i>
-            <span>Manage Leaves</span>
-        </a>
-    </aside>
+<body class="bg-light">
     <main class="px-4">
         <section class="container mt-5"></section>
             <h2 class="mb-4">Settings</h2>
@@ -101,24 +54,9 @@
             </form>
         </section>
     </main>
-
-
-    <!-- Only for updating DOM elements with logged user data -->
-    <script src="../public/javascripts/state.js" type="module"></script>
-    <!-- Code related to this page like dropdowns data etc -->
-    <script src="../public/javascripts/add-employee.js"></script>
+    
     <!-- Bootstrap minified JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap Tooltip setup -->
-    <!-- <script>
-        // Set current date
-        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    </script> -->
 </body>
 
 </html>
